@@ -1,0 +1,156 @@
+
++++++++++++++++++++++++++++++++++++++++
+ texture
++++++++++++++++++++++++++++++++++++++++
+
+- 显卡中有N个纹理单元（GL_TEXTURE0、GL_TEXTURE1..）
+- 每个纹理单元包含（GL_TEXTURE_1D、GL_TEXTURE_2D..）
+
+ps.
+区分TexUnit和Tex，前者是游戏机的卡带插槽，后者是游戏卡
+
+
+
+====================================================================================================
+ void glGenTextures(GLsizei n, GLuint* textures);
+----------------------------------------------------------------------------------------------------
+生成纹理句柄
+
+
+
+
+
+
+====================================================================================================
+ void glBindTexture(GLenum target, GLuint texture);
+----------------------------------------------------------------------------------------------------
+绑定纹理
+
+# target: 纹理类型
+	- GL_TEXTURE_1D
+	- GL_TEXTURE_2D（重要!!）
+	- GL_TEXTURE_3D
+	...
+
+# texture: 纹理handle
+
+
+
+
+====================================================================================================
+ void glTexImage2D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLsizei border, GLenum format, GLenum type, const GLvoid* pixels);
+----------------------------------------------------------------------------------------------------
+上传纹理数据
+
+# target:
+# level: mipmap层级
+# internalformat: 要存储为哪种纹理格式
+# width: 图像宽度
+# height: 图像高度
+# border: 一直为0（历史遗留问题）
+
+# format枚举: 源图的格式
+	- GL_RGB
+	- GL_RGBA
+
+# type枚举: 源图的数据类型
+	- GL_UNSIGNED_BYTE
+
+# pixels: 真实的源图像数据
+
+
+
+
+====================================================================================================
+ void glGenerateMipmap(GLenum target);
+----------------------------------------------------------------------------------------------------
+为纹理自动生成mipmap
+
+
+
+
+
+
+
+
+====================================================================================================
+ void glTexParameter???(GLenum target, GLenum pname, GLint param);
+----------------------------------------------------------------------------------------------------
+设定纹理映射属性
+
+# target:
+# pname: 要设置的属性名称
+	- GL_TEXTURE_MIN_FILTER（magnify）
+	- GL_TEXTURE_MAG_FILTER（minify）
+
+	- GL_TEXTURE_WRAP_S
+	- GL_TEXTURE_WRAP_T
+
+# param:
+	- GL_NEAREST
+	- GL_LINEAR
+	- GL_NEAREST_MIPMAP_NEAREST
+	- GL_NEAREST_MIPMAP_LINEAR
+	- GL_LINEAR_MIPMAP_NEAREST
+	- GL_LINEAR_MIPMAP_LINEAR
+
+	- GL_REPEAT（默认）
+	- GL_CLAMP_TO_EDGE
+	- GL_MIRRORED_REPEAT
+	- GL_CLAMP_TO_BORDER
+
+
+
+====================================================================================================
+ void glTexSubImage2D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid* pixels);
+----------------------------------------------------------------------------------------------------
+上传指定区域纹理数据（很少使用...）
+
+
+
+
+
+
+
+====================================================================================================
+ void glActiveTexture(GLenum texture);
+----------------------------------------------------------------------------------------------------
+切换纹理单元（插槽），GL_TEXTURE0是默认活动的
+
+采样器链接:
+glUniform1i(glGetUniformLocation(ourShader.Program, "ourTexture1"), 0);
+glUniform1i(glGetUniformLocation(ourShader.Program, "ourTexture2"), 1);
+
+
+
+
+
+====================================================================================================
+ void glPixelStore???(GLenum pname, GLint param);
+----------------------------------------------------------------------------------------------------
+
+- pname枚举: GL_UNPACK_ALIGNMENT
+
+
+
+
+
+
+====================================================================================================
+ void glDeleteTextures(GLsizei n, const GLuint* textures);
+----------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
