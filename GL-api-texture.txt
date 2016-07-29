@@ -3,18 +3,18 @@
  texture
 +++++++++++++++++++++++++++++++++++++++
 
-- ÏÔ¿¨ÖĞÓĞN¸öÎÆÀíµ¥Ôª£¨GL_TEXTURE0¡¢GL_TEXTURE1..£©
-- Ã¿¸öÎÆÀíµ¥Ôª°üº¬£¨GL_TEXTURE_1D¡¢GL_TEXTURE_2D..£©
+- æ˜¾å¡ä¸­æœ‰Nä¸ªçº¹ç†å•å…ƒï¼ˆGL_TEXTURE0ã€GL_TEXTURE1..ï¼‰
+- æ¯ä¸ªçº¹ç†å•å…ƒåŒ…å«ï¼ˆGL_TEXTURE_1Dã€GL_TEXTURE_2D..ï¼‰
 
 ps.
-Çø·ÖTexUnitºÍTex£¬Ç°ÕßÊÇÓÎÏ·»úµÄ¿¨´ø²å²Û£¬ºóÕßÊÇÓÎÏ·¿¨
+åŒºåˆ†TexUnitå’ŒTexï¼Œå‰è€…æ˜¯æ¸¸æˆæœºçš„å¡å¸¦æ’æ§½ï¼Œåè€…æ˜¯æ¸¸æˆå¡
 
 
 
 ====================================================================================================
  void glGenTextures(GLsizei n, GLuint* textures);
 ----------------------------------------------------------------------------------------------------
-Éú³ÉÎÆÀí¾ä±ú
+ç”Ÿæˆçº¹ç†å¥æŸ„
 
 
 
@@ -24,15 +24,15 @@ ps.
 ====================================================================================================
  void glBindTexture(GLenum target, GLuint texture);
 ----------------------------------------------------------------------------------------------------
-°ó¶¨ÎÆÀí
+ç»‘å®šçº¹ç†
 
-# target: ÎÆÀíÀàĞÍ
+# target: çº¹ç†ç±»å‹
 	- GL_TEXTURE_1D
-	- GL_TEXTURE_2D£¨ÖØÒª!!£©
+	- GL_TEXTURE_2Dï¼ˆé‡è¦!!ï¼‰
 	- GL_TEXTURE_3D
 	...
 
-# texture: ÎÆÀíhandle
+# texture: çº¹ç†handle
 
 
 
@@ -40,23 +40,23 @@ ps.
 ====================================================================================================
  void glTexImage2D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLsizei border, GLenum format, GLenum type, const GLvoid* pixels);
 ----------------------------------------------------------------------------------------------------
-ÉÏ´«ÎÆÀíÊı¾İ
+ä¸Šä¼ çº¹ç†æ•°æ®
 
 # target:
-# level: mipmap²ã¼¶
-# internalformat: Òª´æ´¢ÎªÄÄÖÖÎÆÀí¸ñÊ½
-# width: Í¼Ïñ¿í¶È
-# height: Í¼Ïñ¸ß¶È
-# border: Ò»Ö±Îª0£¨ÀúÊ·ÒÅÁôÎÊÌâ£©
+# level: mipmapå±‚çº§
+# internalformat: è¦å­˜å‚¨ä¸ºå“ªç§çº¹ç†æ ¼å¼
+# width: å›¾åƒå®½åº¦
+# height: å›¾åƒé«˜åº¦
+# border: ä¸€ç›´ä¸º0ï¼ˆå†å²é—ç•™é—®é¢˜ï¼‰
 
-# formatÃ¶¾Ù: Ô´Í¼µÄ¸ñÊ½
+# formatæšä¸¾: æºå›¾çš„æ ¼å¼
 	- GL_RGB
 	- GL_RGBA
 
-# typeÃ¶¾Ù: Ô´Í¼µÄÊı¾İÀàĞÍ
+# typeæšä¸¾: æºå›¾çš„æ•°æ®ç±»å‹
 	- GL_UNSIGNED_BYTE
 
-# pixels: ÕæÊµµÄÔ´Í¼ÏñÊı¾İ
+# pixels: çœŸå®çš„æºå›¾åƒæ•°æ®
 
 
 
@@ -64,7 +64,7 @@ ps.
 ====================================================================================================
  void glGenerateMipmap(GLenum target);
 ----------------------------------------------------------------------------------------------------
-ÎªÎÆÀí×Ô¶¯Éú³Émipmap
+ä¸ºçº¹ç†è‡ªåŠ¨ç”Ÿæˆmipmap
 
 
 
@@ -76,12 +76,12 @@ ps.
 ====================================================================================================
  void glTexParameter???(GLenum target, GLenum pname, GLint param);
 ----------------------------------------------------------------------------------------------------
-Éè¶¨ÎÆÀíÓ³ÉäÊôĞÔ
+è®¾å®šçº¹ç†æ˜ å°„å±æ€§
 
 # target:
-# pname: ÒªÉèÖÃµÄÊôĞÔÃû³Æ
-	- GL_TEXTURE_MIN_FILTER£¨magnify£©
-	- GL_TEXTURE_MAG_FILTER£¨minify£©
+# pname: è¦è®¾ç½®çš„å±æ€§åç§°
+	- GL_TEXTURE_MIN_FILTERï¼ˆmagnifyï¼‰
+	- GL_TEXTURE_MAG_FILTERï¼ˆminifyï¼‰
 
 	- GL_TEXTURE_WRAP_S
 	- GL_TEXTURE_WRAP_T
@@ -94,7 +94,7 @@ ps.
 	- GL_LINEAR_MIPMAP_NEAREST
 	- GL_LINEAR_MIPMAP_LINEAR
 
-	- GL_REPEAT£¨Ä¬ÈÏ£©
+	- GL_REPEATï¼ˆé»˜è®¤ï¼‰
 	- GL_CLAMP_TO_EDGE
 	- GL_MIRRORED_REPEAT
 	- GL_CLAMP_TO_BORDER
@@ -104,7 +104,7 @@ ps.
 ====================================================================================================
  void glTexSubImage2D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid* pixels);
 ----------------------------------------------------------------------------------------------------
-ÉÏ´«Ö¸¶¨ÇøÓòÎÆÀíÊı¾İ£¨ºÜÉÙÊ¹ÓÃ...£©
+ä¸Šä¼ æŒ‡å®šåŒºåŸŸçº¹ç†æ•°æ®ï¼ˆå¾ˆå°‘ä½¿ç”¨...ï¼‰
 
 
 
@@ -115,9 +115,9 @@ ps.
 ====================================================================================================
  void glActiveTexture(GLenum texture);
 ----------------------------------------------------------------------------------------------------
-ÇĞ»»ÎÆÀíµ¥Ôª£¨²å²Û£©£¬GL_TEXTURE0ÊÇÄ¬ÈÏ»î¶¯µÄ
+åˆ‡æ¢çº¹ç†å•å…ƒï¼ˆæ’æ§½ï¼‰ï¼ŒGL_TEXTURE0æ˜¯é»˜è®¤æ´»åŠ¨çš„
 
-²ÉÑùÆ÷Á´½Ó:
+é‡‡æ ·å™¨é“¾æ¥:
 glUniform1i(glGetUniformLocation(ourShader.Program, "ourTexture1"), 0);
 glUniform1i(glGetUniformLocation(ourShader.Program, "ourTexture2"), 1);
 
@@ -128,9 +128,16 @@ glUniform1i(glGetUniformLocation(ourShader.Program, "ourTexture2"), 1);
 ====================================================================================================
  void glPixelStore???(GLenum pname, GLint param);
 ----------------------------------------------------------------------------------------------------
-
-- pnameÃ¶¾Ù: GL_UNPACK_ALIGNMENT
-
+è®¾ç½®åƒç´ å­˜å‚¨æ¨¡å¼ï¼Œå°†å½±å“ä»GPUè¿”å›è‡³clientæ•°æ®çš„å†…å­˜å¯¹é½æ–¹å¼
+?????
+# pnameæšä¸¾:
+	- GL_PACK_ALIGNMENT
+	- GL_UNPACK_ALIGNMENT
+# param: 
+	- 1
+	- 2
+	- 4
+	- 8
 
 
 
