@@ -1,48 +1,5 @@
 
 +++++++++++++++++++++++++++++++++++++++
- info
-+++++++++++++++++++++++++++++++++++++++
-
-====================================================================================================
- void glGetProgramiv(GLuint program, GLenum pname, const GLint* param);
-----------------------------------------------------------------------------------------------------
-获取当前program的实时信息
-
-# program:
-# pname:
-- GL_ACTIVE_ATTRIBUTE_MAX_LENGTH
-- GL_ACTIVE_ATTRIBUTES（表示glsl程序中实际用到的attribute数目。与client无关，仅与vShader代码相关）
-- GL_ACTIVE_UNIFORM_MAX_LENGTH
-- GL_ACTIVE_UNIFORMS（表示glsl程序中实际用到的uniform数目。与client无关，仅与vShader,fShader代码相关）
-- GL_ATTACHED_SHADERS
-- GL_LINK_STATUS
-
-# param: 返回接收指针
-
-
-
-
-====================================================================================================
- void glGetIntegerv(GLenum pname, GLint* params);
-----------------------------------------------------------------------------------------------------
-获取当前GL系统的相关信息
-
-pname: 表示要得到什么状态的值
-- GL_MAX_VERTEX_UNIFORM_VECTORS: 一个uniform变量能存储的最大vec4数量，一个vec4包含4个comp（128+）
-- GL_MAX_VERTEX_UNIFORM_COMPONENTS: 一个uniform变量能存储的最大comp数量（是上面的4倍）
-- GL_MAX_FRAGMENT_UNIFORM_VECTORS（16+）
-- GL_MAX_VERTEX_ATTRIBS（8+）
-- GL_MAX_VARYING_VECTORS（8+）
-
-- GL_MAX_TEXTURE_UNITS（8+）
-- GL_MAX_TEXTURE_IMAGE_UNITS
-
-
-
-
-
-
-+++++++++++++++++++++++++++++++++++++++
  shader
 +++++++++++++++++++++++++++++++++++++++
 
