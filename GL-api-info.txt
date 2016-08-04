@@ -31,7 +31,7 @@
 
 pname:
 - GL_MAX_VERTEX_UNIFORM_VECTORS: 一个uniform变量能存储的最大vec4数量，一个vec4包含4个comp（128+）
-- GL_MAX_VERTEX_UNIFORM_COMPONENTS: 一个uniform变量能存储的最大comp数量（是上面的4倍）
+- GL_MAX_VERTEX_UNIFORM_COMPONENTS: 一个uniform变量能存储的最大comp（32位数）数量（是上面的4倍）
 - GL_MAX_FRAGMENT_UNIFORM_VECTORS（16+）
 - GL_MAX_VERTEX_ATTRIBS（8+）
 - GL_MAX_VARYING_VECTORS（8+）
